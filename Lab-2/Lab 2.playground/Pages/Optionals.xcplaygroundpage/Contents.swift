@@ -126,11 +126,22 @@ In this Playground we have looked at some of the capabilities of optionals in Sw
      7. Use the nil-coalescing operator to set the value of a variable to the value of `username`, or to `"Anonymous"` if `username` is `nil`.
  
 */
+var username: String? = nil
+
+print(username)
+
+username = "HelloWorld"
 
 
-// Write your answers here:
+if username != nil {
+    print("There's nothing")
+} else {
+    username!
+}
+print (username!)
 
 
+let screenName = username ?? "Annonymous"
 
 
 
