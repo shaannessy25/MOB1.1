@@ -8,52 +8,65 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var env: GlobalState
     var body: some View {
         ZStack {
             Color.black.ignoresSafeArea()
             VStack(spacing: 4) {
                 HStack() {
-                    Text("3.14")
+                    Text(env.display)
                         .font(.system(size:48))
                         .foregroundColor(.white)
                         .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .bottomTrailing)
                         .padding()
                 }
+                
                 HStack(spacing: 4) {
-                    self.makeButton(label: "7")
-                    self.makeButton(label: "8")
-                    self.makeButton(label: "9")
-                    self.makeButton(label: "X")
+                    self.makeButton(key: .allClear, backColor: Color(white: 0.5, opacity: 1.0))
+                    self.makeButton(key: .plusMinus, backColor: Color(white: 0.5, opacity: 1.0))
+                    self.makeButton(key: .percent, backColor: Color(white: 0.5, opacity: 1.0))
+                    self.makeButton(key: .divide, backColor: .orange)
+                }
+                HStack(spacing: 4) {
+                    self.makeButton(key: .seven)
+                    self.makeButton(key: .eight)
+                    self.makeButton(key: .nine)
+                    self.makeButton(key: .multiply, backColor: .orange)
                 }
                 
                 HStack(spacing: 4) {
-                    self.makeButton(label: "4")
-                    self.makeButton(label: "5")
-                    self.makeButton(label: "6")
-                    self.makeButton(label: "+")
+                    self.makeButton(key: .four)
+                    self.makeButton(key: .five)
+                    self.makeButton(key: .six)
+                    self.makeButton(key: .plus, backColor: .orange)
                 }
                 
                 HStack(spacing: 4) {
-                    self.makeButton(label: "1")
-                    self.makeButton(label: "2")
-                    self.makeButton(label: "3")
-                    self.makeButton(label: "-")
+                    self.makeButton(key: .one)
+                    self.makeButton(key: .two)
+                    self.makeButton(key: .three)
+                    self.makeButton(key: .minus, backColor: .orange)
                 }
                 
                 HStack(spacing: 4) {
-                    self.makeButton(label: "0", width: 148)
-                    self.makeButton(label: ".")
-                    self.makeButton(label: "=")
+                    self.makeButton(key: .zero, width: 148)
+                    self.makeButton(key: .dot)
+                    self.makeButton(key: .equal, backColor: .orange)
                 }
+                Spacer(minLength: 10)
             }
         }
     }
-    func makeButton(label: String = "0", width: CGFloat = 70, height: CGFloat = 70) -> some View {
-        return AnyView(Button(action: {}, label : {
-            Text(label)
+    func makeButton(key: CalculatorKey = .zero, width: CGFloat = 70, height: CGFloat = 70,
+                    textColor: Color = .white, backColor: Color = Color(white: 0.2)) -> some View {
+        return AnyView(
+            Button(action: {
+                env.keyPressed(key: key)
+            }, label : {
+            Text(key.rawValue)
                 .frame(width: width, height: height, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .foregroundColor(.white)
-                .background(Color.orange)
+                .foregroundColor(textColor)
+                .background(backColor)
                 .cornerRadius(height / 2)
                 .font(.title)
                 .padding(2)
