@@ -13,6 +13,7 @@
 		2222D32B25D1E42B002D4867 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2222D32A25D1E42B002D4867 /* Preview Assets.xcassets */; };
 		22A87DF725D20318003BF871 /* CalculatorKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A87DF625D20318003BF871 /* CalculatorKey.swift */; };
 		22A87DFA25D2071D003BF871 /* GlobalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A87DF925D2071D003BF871 /* GlobalState.swift */; };
+		22A87DFD25D20E7B003BF871 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A87DFC25D20E7B003BF871 /* extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		2222D32C25D1E42B002D4867 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22A87DF625D20318003BF871 /* CalculatorKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorKey.swift; sourceTree = "<group>"; };
 		22A87DF925D2071D003BF871 /* GlobalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalState.swift; sourceTree = "<group>"; };
+		22A87DFC25D20E7B003BF871 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				2222D32325D1E428002D4867 /* swiftUI_CalculatorApp.swift */,
 				2222D32525D1E428002D4867 /* ContentView.swift */,
 				22A87DF925D2071D003BF871 /* GlobalState.swift */,
+				22A87DFC25D20E7B003BF871 /* extensions.swift */,
 				22A87DF625D20318003BF871 /* CalculatorKey.swift */,
 				2222D32725D1E42B002D4867 /* Assets.xcassets */,
 				2222D32C25D1E42B002D4867 /* Info.plist */,
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22A87DFD25D20E7B003BF871 /* extensions.swift in Sources */,
 				2222D32625D1E428002D4867 /* ContentView.swift in Sources */,
 				2222D32425D1E428002D4867 /* swiftUI_CalculatorApp.swift in Sources */,
 				22A87DFA25D2071D003BF871 /* GlobalState.swift in Sources */,
