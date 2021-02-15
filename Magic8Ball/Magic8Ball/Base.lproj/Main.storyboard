@@ -16,17 +16,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Have a question?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmd-XK-mhV">
-                                <rect key="frame" x="71" y="119" width="272" height="102"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Have a question?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmd-XK-mhV">
+                                <rect key="frame" x="20" y="347.66666666666669" width="374" height="40.666666666666686"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0VH-09-qw6">
-                                <rect key="frame" x="80" y="560" width="254" height="65"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Shake It"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0VH-09-qw6">
+                                <rect key="frame" x="20" y="628" width="374" height="74"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Shake It">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="shakeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cAw-ck-VPC"/>
                                 </connections>
@@ -34,6 +36,16 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0VH-09-qw6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="06M-Sv-9B1"/>
+                            <constraint firstItem="vmd-XK-mhV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="0eg-FZ-wst"/>
+                            <constraint firstItem="vmd-XK-mhV" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="0oq-fG-tmD"/>
+                            <constraint firstItem="vmd-XK-mhV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="46f-hh-CGf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vmd-XK-mhV" secondAttribute="trailing" constant="20" id="5aN-Wz-wGa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0VH-09-qw6" secondAttribute="bottom" constant="40" id="cb8-SW-7yU"/>
+                            <constraint firstItem="0VH-09-qw6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="622" id="hZ6-Bo-9kN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0VH-09-qw6" secondAttribute="trailing" constant="20" id="jOp-4B-JbT"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="answerLabel" destination="vmd-XK-mhV" id="gIA-Cx-VRb"/>
@@ -42,12 +54,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="87.723214285714278"/>
+            <point key="canvasLocation" x="18.840579710144929" y="87.228260869565219"/>
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
