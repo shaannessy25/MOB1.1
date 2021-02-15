@@ -39,7 +39,10 @@ class GlobalState: ObservableObject {
                     operation = key
                 }
             }
-                
+        case .equal:
+            beginInput = true
+            calculate()
+            
         case .dot:
             if display.contains(CalculatorKey.dot.rawValue) {
                 break
@@ -55,6 +58,7 @@ class GlobalState: ObservableObject {
             }
             
         case .allClear, .clear:
+            beginInput = true
             display = CalculatorKey.zero.rawValue
         
         default:
